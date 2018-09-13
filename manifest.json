@@ -1,0 +1,19 @@
+{
+    "name": "Browsing Analyzer",
+    "version": "1.0",
+    "description": "An extension to track and analyze a user's browsing behavior.",
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": true
+    },
+    "content_scripts": [{
+            "matches": ["<all_urls>"],
+            "js": ["js/contentScript.js"]
+        }],
+    "browser_action": {},
+    "manifest_version": 2
+}

@@ -1,0 +1,91 @@
+<html>
+<head>
+	<link rel="stylesheet" href="../css/bootstrap-4.1.3.min.css">
+	<style type="text/css">
+	body {
+		margin-top: 1%;
+		margin-bottom: 2%;
+		background-color: rgb(56,56,56);
+	}
+	</style>
+	<script src="../js/jquery-3.1.1.slim.min.js"></script>
+	<script src="../js/stats.js"></script>
+	<script src="../js/Chart-2.7.2.min.js"></script>
+	<script src="../js/popper-1.14.3.min.js"></script>
+	<script src="../js/bootstrap-4.1.3.min.js"></script>
+</head>
+<body>
+	<div class="container align-items-center">
+		<div class="row">
+			<div class="col">
+				<p class="text-white text-center display-3">Browsing Analyzer</p>
+				<p class="text-white text-justify">A simple offline application which helps you understand your browsing habits. The reason behind coming up with this was that the author wanted to understand where he was slacking off and wanted to know the top websites taking up his time. He was inclined to just get the top ones and not all the info because, greater the information present, greater the time it will take to process and get useful information.</p>
+				<p class="text-white text-justify">You can find out which website was browsed for the longest time and you can also find out how much time was being spent on your top websites in the last few days. You can only see the data of the <span class="text-warning">top 7 websites</span> in the three categories, today, in the last 7 days and in the last 30 days.</p>
+			</div>
+		</div>
+	</div>
+	<div class="container align-items-center">
+		<div class="row">
+			<div class="col">
+				<div class="row mt-2 mb-2" id="first-row">
+					<div class="container">
+						<div class="row mt-1 mb-1">
+							<div class="btn-group btn-group-sm" role="group">
+								<button type="button" class="num-days-button btn btn-warning active" data-num-days="1" id="num-days-button-today">Today</button>
+								<button type="button" class="num-days-button btn btn-secondary" data-num-days="7" id="num-days-button-7-days">Last 7 days</button>
+								<button type="button" class="num-days-button btn btn-secondary" data-num-days="30">Last 30 days</button>
+							</div>
+							<div class="ml-1">
+								<button type="button" class="btn btn-primary btn-sm" id="refresh-data-button">
+          							Refresh Data 
+        						</button>
+        					</div>
+							<div class="ml-1">
+								<button type="button" class="btn btn-danger btn-sm" id="delete-data-button">
+          							Delete Data 
+        						</button>
+        					</div>
+						</div>
+						<div class="row mt-1 mb-1">
+							<div class="container">
+								<div class="row mt-1 mb-1"><div class="btn-group btn-group-sm" role="group" id="all-websites-group"></div></div>
+							</div>
+						</div>
+					</div>
+				</div>			
+				<div class="row" id="bar-chart-div">
+					<canvas id="bar-chart" class="chart"></canvas>
+				</div>	
+				<div class="row align-items-center" id="line-chart-div-parent">
+					<div class="col-9" id="line-chart-div">
+						<canvas id="line-chart" class="chart"></canvas>
+					</div>
+					<div class="col-3">
+						<p class="text-justify">
+							<span class="display-4 text-warning" id="line-chart-div-time-1"></span>
+							<span class="h1 text-warning" id="line-chart-div-time-2"></span>
+							<br/>
+							<span class="text-white">(Total Time)</span>
+						</p> 
+					</div>
+				</div>
+				<div class="row" id="time-today-div">
+					<div class="col">
+						<p class="text-center text-white"> <span class="display-4 text-warning" id="time-today"></span> spent today.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col text-right text-light small">
+				<p></p>
+				<p>Source Code - <a href="https://github.com/diwakargrandhi/chrome-browsing-analyzer" target="_blank">Browsing Analyzer</a> <br/>
+				Author - <a href="https://about.me/rama.grandhi" target="_blank">Diwakar Grandhi</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
