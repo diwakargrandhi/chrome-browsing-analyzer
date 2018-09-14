@@ -180,6 +180,8 @@ function create_line_graphs(website_name) {
 				time_array_s.push(time_s);
 				time_array_m.push((element.milli_seconds/(1000*60)).toFixed(2));
 				time_array_h.push((element.milli_seconds/(1000*60*60)).toFixed(2));
+			}
+			if(element.day > min_day_num_to_consider) {
 				total_time_s = parseInt(total_time_s) + parseInt(time_s);
 			}
 		};
@@ -234,9 +236,9 @@ function create_line_graphs(website_name) {
 					}]
 				}
 			});
+
+			console.log("Done with loading line chart");
 		}
-		
-		console.log("Done with loading line chart");
 	});
 }
 
